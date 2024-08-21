@@ -1,0 +1,244 @@
+*, *::before, *::after {
+    box-sizing: border-box;  
+}
+
+html, 
+body {
+    margin: 0;
+    padding: 0;
+    font-family:  "Source Sans 3", sans-serif;
+    background-color: #fff;
+}
+
+p{
+    margin: 0;
+}
+
+a, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
+  }
+
+
+/*
+LAYOUT
+*/
+
+body{
+    display: grid;
+    grid-template-columns: 1.25em 1fr 1.25em;
+    grid-template-areas: 
+    "head head head"
+    "hero hero hero"
+    ".... artc ...."
+    "foot foot foot";
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+    grid-area: head;
+    align-items: center;
+    padding: 1em 1.25em;
+
+}
+
+.hero-section{
+    grid-area: hero;
+    padding: 5.4375em 1.25em 1.5625em 1.25em;
+    background-image: url('/images/article-image-hero.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.articles-section{
+    grid-area: artc;
+    
+}
+
+footer{
+    grid-area: foot;
+    background-color: #202020;
+    text-align: center;
+    padding: 2.3125em 1.25em;
+}
+
+/*Header section CSS*/
+
+.name-container{
+    display: flex;
+    gap: .25em;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.logo-img{
+    max-width: 1.4375em;
+    max-height: 1.4375em;
+}
+
+
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    gap: 1.875em;
+}
+
+nav ul li{
+    font-size: .75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+h1{
+    font-family: "Roboto", serif;
+    font-weight: bold;
+    font-size: .875em;
+    margin: 0;
+}
+
+
+/*Hero Section CSS*/
+
+h2{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: .25em;
+    margin-top: 0;
+}
+
+
+
+.hero-date{
+    font-size: .75rem;
+    margin-bottom: .667em;
+}
+
+/*Articles Section CSS*/
+
+article{
+    margin-top: 2.125em;
+    
+}
+
+.article-date{
+    font-size: .875rem;
+    margin-top: 1em;
+    margin-bottom: .643em;
+
+}
+
+.article-header{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: .374em;
+
+}
+
+.article-text{
+    color: #505050;
+}
+
+article img{
+    width: 100%;
+}
+
+.articles-section a{
+    display: block;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 1.6875em auto 2.6875em auto;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.articles-container{
+    display: grid;
+    gap: 1em;  
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))
+}
+
+/*Footer Section CSS*/
+
+.footer-text{
+    font-weight: bold;
+    color: #ECECEC;
+}
+
+.copyright{
+    color: #D7D7D7;
+}
+
+.footer-text, .copyright{
+    font-size: .75rem;
+}
+
+/*Media Section CSS*/
+
+@media (min-width: 460px){
+    .hero-section {
+        padding: 5em 1.25em 2em 1.25em;
+    }
+
+    .hero-text{
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    body{
+        grid-template-columns: 3.125em 1fr 3.125em;
+    }
+
+    header{
+        padding: 1.5em 3.3125em;
+    }
+
+    .hero-section {
+        padding: 17.9375em 3.125em 3.6875em 3.125em;
+    }
+
+    h1{
+        font-size: 1.25rem;
+    }
+
+    nav ul li{
+        font-size: 1rem;
+    }
+
+    .hero-text{
+        max-width: 614px;
+    }
+
+    .articles-section{
+        margin-top: 3.3125em;
+    }
+
+    .articles-container{ 
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.625em;
+    }
+
+}
+
+@media (min-width: 1200px){
+    .articles-container{ 
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
+/*utilities*/
+
+.underline{
+    border-bottom: solid 2px;
+}
